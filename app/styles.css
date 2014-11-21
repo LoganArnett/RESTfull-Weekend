@@ -1,0 +1,29 @@
+/* DavidBot CSS */
+
+.container-fluid {
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+}
+.david {
+  width: 45%;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+.davidbot img {
+  margin-left: 15%;
+  /** on submit change margin-left to 40%;
+  and add width: 20%;
+  */
+}
+iframe {
+  width: 100%;
+  height: 50vh;
+  display: none;
+}
+input {
+  width: 30%;
+  margin-left: 35%;;
+}
