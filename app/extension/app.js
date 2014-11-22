@@ -56,7 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var currentTab = document.getElementById('microphone');
   currentTab.addEventListener('click', function(){
-    chrome.tabs.create({ url: 'http://www.sanity.com'});
+    chrome.tabs.getCurrent(function(Tab){
+
+    })
   });
 });
 
