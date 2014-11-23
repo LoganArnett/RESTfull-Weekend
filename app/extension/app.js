@@ -1,49 +1,5 @@
 /* Davidbot app.js */
 
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
-recognition.continuous = true;
-recognition.interimResults = true;
-
-recognition.onresult = function(event) {
-  var results = event.results;
-  // results is an array of SpeechRecognitionResults
-  // each of which is an array of SpeechRecognitionAlternatives
-  // in this demo, we only use the first alternative
-  var interimTranscript = '';
-  for (var i = event.resultIndex; i != results.length; ++i) {
-    var result = results[i];
-    // once speaking/recognition stops, a SpeechRecognitionEvent
-    // is fired with a single result, for which isFinal is true
-    if (result.isFinal) {
-      $('#question').val(results[0][0].transcript)
-      recognition.stop();
-      return;
-    } else {
-      interimTranscript += result[0].transcript;
-      $('#question').val(interimTranscript);
-    }
-  }
-  
-}
-
-recognition.onend = function(event) {
-  console.log('Recognition ended.');
-}
-recognition.onerror = function(event) {
-  console.log('Error: ' + event.error);
-}
-
-
-
-// var startButton = document.querySelector('button#microphone');
-// startButton.onclick = function(){
-//   chrome.tabs.getCurrent(function() {
-//   console.log(chrome.tabs);
-//   return false;
-//   });
-// };
-
 document.addEventListener('DOMContentLoaded', function() {
   var submit = document.getElementById('submit');
   submit.addEventListener('click', function(){
@@ -53,14 +9,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+var apiBase = 'http://api.hipchat.com/v2/room/997292/notification?auth_token='
+var auth_token = 'Q41fTsyF67bt2ak98JmS4BKzP0VX0SNBApqbWvLB'
+
 document.addEventListener('DOMContentLoaded', function() {
-  var currentTab = document.getElementById('microphone');
+  var linkToShare = '';
+  var currentTab = document.getElementById('hipchat');
   currentTab.addEventListener('click', function(){
     event.preventDefault();
-    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-    console.log('"' + (tabs[0].url) +'"');
-    });
+      event.preventDefault();
+      chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+      $.ajax({
+        type: 'POST',
+        url: apiBase + auth_token,
+        data: JSON.stringify({
+          'message' : "One of your classmates found this site helpful and wanted to share it with you! " + tabs[0].url,
+          'color'   : 'purple',
+          "message_format" : 'text'
+        }),
+        error: function(e){
+          console.log(e);
+        },
+        dataType: "json",
+        contentType: "application/json"
+        });
+      });
+    return false;
   });
-  return false;
 });
 
