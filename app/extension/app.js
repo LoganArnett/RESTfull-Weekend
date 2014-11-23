@@ -56,9 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var currentTab = document.getElementById('microphone');
   currentTab.addEventListener('click', function(){
-    chrome.tabs.getCurrent(function(Tab){
-
-    })
+    event.preventDefault();
+    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    console.log('"' + (tabs[0].url) +'"');
+    });
   });
+  return false;
 });
 

@@ -1,5 +1,9 @@
 /* DavidBot CSS */
 
+body {
+  background-color: #f2eded;
+}
+
 .david {
   margin: 30px;
 }
@@ -27,5 +31,19 @@ iframe {
 form {
   /*width: 100%;*/
   margin: auto;
-  margin-bottom: 2ex;
+}
+
+button{
+  margin: 2px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 0;
+  background-color: #7abce2;
+}
+
+#buttons {
+  margin: auto;
+  width: 126%;
+  margin-top: 10px;
 }
