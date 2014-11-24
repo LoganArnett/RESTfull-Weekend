@@ -16,6 +16,7 @@ figure {
 h1 {
   text-align: center;
   font-size: 2em;
+  font-family: 'Oswald', sans-serif;
 }
 .davidbot img {
   margin: auto;
@@ -31,7 +32,7 @@ iframe {
 }
 form {
   /*width: 100%;*/
-  margin: auto;
+  margin: 0 -20px;
 }
 
 button{
@@ -52,4 +53,12 @@ button{
   /* z-index: -1; */
   position: absolute;
   top: 0;
+}
+
+button#hat {
+  margin: 8px 0;
+}
+
+button#hipchat{
+  width: 30%;
 }
