@@ -2,6 +2,7 @@
 
 body {
   background-color: #f2eded;
+  background-image: url(http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0152/6961/rrrobot_circut_black_gray_preview.png);
 }
 
 .david {
@@ -17,6 +18,9 @@ h1 {
   text-align: center;
   font-size: 2em;
   font-family: 'Oswald', sans-serif;
+  color: white;
+  font-style: italic;
+  
 }
 .davidbot img {
   margin: auto;
