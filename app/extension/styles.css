@@ -10,6 +10,7 @@ body {
 
 figure {
   margin: 0;
+  position: relative;
 }
 
 h1 {
@@ -26,7 +27,7 @@ h1 {
 iframe {
   width: 100%;
   height: 100vh;
-  display: none; 
+  display: none;
 }
 form {
   /*width: 100%;*/
@@ -46,4 +47,9 @@ button{
   margin: auto;
   width: 126%;
   margin-top: 10px;
+}
+#davidHat {
+  /* z-index: -1; */
+  position: absolute;
+  top: 0;
 }

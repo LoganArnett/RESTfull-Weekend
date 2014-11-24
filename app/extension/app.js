@@ -38,3 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+$("#hat").on('click', function(){
+  $('#davidHat').toggleClass('hidden')
+  });

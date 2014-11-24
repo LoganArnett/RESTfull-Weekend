@@ -9,31 +9,39 @@
 </head>
 <body>
     <div class="container-fluid">
+      <input type="text" value="What was the most helpful?">
+      <button type="submit" class="primary">HipChat That Shit!</button>
+      <div class="david">
+        <figure class="davidbot">
+        <img src="https://avatars1.githubusercontent.com/u/96015?v=3&s=400" alt="David Sans-Hat" style="display: none;">
       <!-- <button class="primary">HipChat It</button> -->
       <div class="david">
         <figure class="davidbot">
         <img src="https://avatars1.githubusercontent.com/u/96015?v=3&s=400" id="david" alt="David Sans-Hat">
         <figcaption><h1>The Mighty DavidBot!</h1></figcaption>
-        </figure> 
+        </figure>
       <form>
-        <textarea class="form-control" rows="3" 
+        <textarea class="form-control" rows="3"
           placeholder="What's Your Question?" id="question"></textarea>
         <button id="microphone"><span class='fa fa-microphone'></span></button>
         <button id="submit">SUBMIT</button>
       </form>
       </div>
+
+       <iframe name="ifr" src="" frameborder="0" id="bingit"></iframe>
+      <input type="text" value="What's Your Question?"><a href='#'><span class='fa fa-microphone'></span></a>
+
       <iframe src="" frameborder="0" id="bingit"></iframe>
     </div>
     <div id="testLoad"></div>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="app.js"></script>
-  <!--   <script>
-  var searchFinal = "AngularJS&qs=n&form=QBRE&pq=angularjs&sc=8-9&sp=-1&sk=&cvid=e1d0054e1f4c475f99a6db9e22af69f7"
-  \$("#bingit")
-              .attr('src', "http://www.letmebingthatforyou.com/search?q=" + searchFinal );
+<script>
 
+  console.log($("#bingit"));
+  /* \$("#searchFinal").attr('src') */
 
-  </script> -->
+</script>
 
 </body>
 </html>
