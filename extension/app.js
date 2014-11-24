@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-var apiBase = 'http://api.hipchat.com/v2/room/997292/notification?auth_token='
-var auth_token = 'Q41fTsyF67bt2ak98JmS4BKzP0VX0SNBApqbWvLB'
+var apiBase = 'http://api.hipchat.com/v2/room/694006/notification?auth_token='
+var auth_token = 'TOAf8J4LiaP6fz7a63WRix6d6I5BcHHGbiZTyrhT'
 
 document.addEventListener('DOMContentLoaded', function() {
   var linkToShare = '';
