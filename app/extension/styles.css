@@ -1,0 +1,49 @@
+/* DavidBot CSS */
+
+body {
+  background-color: #f2eded;
+}
+
+.david {
+  margin: 30px;
+}
+
+figure {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+}
+.davidbot img {
+  margin: auto;
+  width: 100%;
+  /** on submit change margin-left to 40%;
+  and add width: 20%;
+  */
+}
+iframe {
+  width: 100%;
+  height: 100vh;
+  display: none; 
+}
+form {
+  /*width: 100%;*/
+  margin: auto;
+}
+
+button{
+  margin: 2px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 0;
+  background-color: #7abce2;
+}
+
+#buttons {
+  margin: auto;
+  width: 126%;
+  margin-top: 10px;
+}
