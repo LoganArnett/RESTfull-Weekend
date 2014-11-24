@@ -1,13 +1,29 @@
 /* Davidbot app.js */
 
+function play(){
+  var think = document.getElementById('think');
+  think.play();
+  }
+
+function search(){
+  var newURL = "http://lmgtfy.com/?q=" + $('#question').val();
+  chrome.tabs.create({ url: newURL });
+  return false;
+};
+
+function delay(fnc, time){
+  setTimeout(fnc, time);
+  return false;
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   var submit = document.getElementById('submit');
   submit.addEventListener('click', function(){
-      var newURL = "http://lmgtfy.com/?q=" + $('#question').val();
-      chrome.tabs.create({ url: newURL });
-      return false;
+      event.preventDefault();
+      play()
+      setTimeout(search, 2000);
+      });
   });
-});
 
 var apiBase = 'http://api.hipchat.com/v2/room/694006/notification?auth_token='
 var auth_token = 'TOAf8J4LiaP6fz7a63WRix6d6I5BcHHGbiZTyrhT'
@@ -42,3 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $("#hat").on('click', function(){
   $('#davidHat').toggleClass('hidden')
   });
+
+$('#hipchat').on('click', function(){
+  $('#hipchat').append('<audio id="think" src="http://tts-api.com/tts.mp3?q=Hip%20Chat%20That%20Shit%3F!" autoplay>Your browser does not support the <code>audio</code> element.</audio>');
+});
