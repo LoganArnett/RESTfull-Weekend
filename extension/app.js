@@ -5,11 +5,11 @@ function play(){
   think.play();
   }
 
-function search(){
-  var newURL = "http://lmgtfy.com/?q=" + $('#question').val();
-  chrome.tabs.create({ url: newURL });
-  return false;
-};
+// function search(){
+//   var newURL = "http://lmgtfy.com/?q=" + $('#question').val();
+//   chrome.tabs.create({ url: newURL });
+//   return false;
+// };
 
 function delay(fnc, time){
   setTimeout(fnc, time);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
-var apiBase = 'http://api.hipchat.com/v2/room/694006/notification?auth_token='
+var apiBase = 'http://api.hipchat.com/v2/room/1006452/notification?auth_token='
 var auth_token = 'TOAf8J4LiaP6fz7a63WRix6d6I5BcHHGbiZTyrhT'
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'POST',
         url: apiBase + auth_token,
         data: JSON.stringify({
-          'message' : "One of your classmates found this site helpful and wanted to share it with you! " + tabs[0].url,
+          'message' : $('#question').val() + " " + tabs[0].url,
           'color'   : 'purple',
           "message_format" : 'text'
         }),
